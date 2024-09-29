@@ -3,13 +3,15 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "local": "node local-test.mjs && open screenshot.png"
   },
   "type": "module",
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "chrome-aws-lambda": "^10.1.0",
     "dotenv": "^16.4.5",
     "puppeteer": "^23.4.1"
   }
