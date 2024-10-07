@@ -20,14 +20,8 @@ let puppeteer
 let chromium
 let executablePath
 
-if (process.env.IS_LOCAL) {
-  puppeteer = await import('puppeteer') // Local testing
-  executablePath = undefined // Puppeteer will use its own Chromium
-} else {
-  puppeteer = await import('puppeteer-core') // AWS Lambda
-  chromium = await import('chrome-aws-lambda')
-  executablePath = await chromium.executablePath
-}
+puppeteer = await import('puppeteer') // Local testing
+executablePath = undefined // Puppeteer will use its own Chromium
 
 async function sendMail(content) {
   console.log({ EMAIL_DOMAIN, MAILGUN_API_KEY, FROM_EMAIL, TO_EMAIL })
